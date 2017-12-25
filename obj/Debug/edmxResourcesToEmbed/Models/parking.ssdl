@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ParkingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Neighbour">
+    <Key>
+      <PropertyRef Name="NeighId" />
+    </Key>
+    <Property Name="NeighId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SpotId" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="40" />
+    <Property Name="ArriveT" Type="date" />
+    <Property Name="LeaveT" Type="date" />
+    <Property Name="Note" Type="nvarchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="Parking">
+    <Key>
+      <PropertyRef Name="SpotId" />
+    </Key>
+    <Property Name="SpotId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NeighId" Type="int" />
+    <Property Name="StatusP" Type="smallint" Nullable="false" />
+    <Property Name="ArriveT" Type="smalldatetime" />
+    <Property Name="LeaveT" Type="smalldatetime" />
+    <Property Name="Note" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <Association Name="FK__Neighbour__SpotI__25869641">
+    <End Role="Parking" Type="Self.Parking" Multiplicity="0..1" />
+    <End Role="Neighbour" Type="Self.Neighbour" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Parking">
+        <PropertyRef Name="SpotId" />
+      </Principal>
+      <Dependent Role="Neighbour">
+        <PropertyRef Name="SpotId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ParkingModelStoreContainer">
+    <EntitySet Name="Neighbour" EntityType="Self.Neighbour" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Parking" EntityType="Self.Parking" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Neighbour__SpotI__25869641" Association="Self.FK__Neighbour__SpotI__25869641">
+      <End Role="Parking" EntitySet="Parking" />
+      <End Role="Neighbour" EntitySet="Neighbour" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

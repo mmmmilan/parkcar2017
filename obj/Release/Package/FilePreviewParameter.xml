@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="parking2017" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\mmmmilan\\documents\\visual\ studio\ 2015\\Projects\\parking\\parking\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\mmmmilan\\documents\\visual\ studio\ 2015\\Projects\\parking\\parking\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="Add write permission to App_Data Folder" description="Add write permission to App_Data folder" value="parking2017/App_Data" tags="Hidden">
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\mmmmilan\\documents\\visual\ studio\ 2015\\Projects\\parking\\parking\\obj\\Release\\Package\\PackageTmp\\App_Data$" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-parking-20171224073025.mdf;Initial Catalog=aspnet-parking-20171224073025;Integrated Security=True" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\mmmmilan\\documents\\visual\ studio\ 2015\\Projects\\parking\\parking\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="ParkingEntities1-Web.config Connection String" description="" value="metadata=res://*/Models.parking.csdl|res://*/Models.parking.ssdl|res://*/Models.parking.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Parking.mdf;integrated security=True;multipleactiveresultsets=True;application name=EntityFramework&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\mmmmilan\\documents\\visual\ studio\ 2015\\Projects\\parking\\parking\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ParkingEntities1']/@connectionString" />
+  </parameter>
+  <parameter name="ParkingEntities-Web.config Connection String" description="ParkingEntities Connection String used in web.config by the application to access the database." value="metadata=res://*/Models.parkingentmodel.csdl|res://*/Models.parkingentmodel.ssdl|res://*/Models.parkingentmodel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Parking.mdf;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\mmmmilan\\documents\\visual\ studio\ 2015\\Projects\\parking\\parking\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ParkingEntities']/@connectionString" />
+  </parameter>
+</parameters>
